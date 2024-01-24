@@ -19,7 +19,6 @@ def additionErrorPropagation(errlist):
     return err
 
 
-
 # analysis functions
 
 # bins should be put in as a list as [number of bins, min_value,max_value]

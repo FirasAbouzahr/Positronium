@@ -21,7 +21,6 @@ from statHeader import *
 save_as_csv = True
 
 
-
 # read-in triple coincidence data
 df = getTripleCoincidenceDataFrame("/Users/feef/Positronium/TCoinc-Tests/LightTightness7-21-23_quadRegion_Tripcoinc.dat",toGeo = False)
 print("Reading in triples...")
@@ -31,7 +30,7 @@ file = "/Users/feef/Positronium/TCoinc-Tests/LightTightness7-21-23_coinc.dat"
 doubleCoincDf  = pd.read_csv(file,sep='\t',usecols=[2,3,4,7,8,9],chunksize = 10000000)
 print("Reading in doubles...")
 print("This may take awhile... but it's okay we only need to do this once for an dataset, so be patient and consider the following:")
-print("where the hell are all the right-handed neutrinos yet!?")
+print("where the hell are all the right-handed neutrinos!?")
 
 
 framelist = []
@@ -58,5 +57,5 @@ for chans in tqdm(triplecoincidencechannels):
     
 photopeakDf = pd.DataFrame(photopeakDict)
 if save_as_csv == True:
-    photopeakDf.to_csv("photopeakLUT.csv")
+    photopeakDf.to_csv("photopeakLUT.csv",index = False)
     
